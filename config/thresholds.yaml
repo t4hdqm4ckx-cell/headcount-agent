@@ -1,0 +1,15 @@
+# Headcount agent thresholds
+# Calibrate per client
+
+client: lumina-streaming
+
+people_cost_variance:
+  amount_threshold_usd: 50000
+  pct_threshold: 0.05
+
+compensation:
+  out_of_band_pct: 0.15       # flag if > 15% above or below band midpoint
+  open_role_risk_days: 30     # flag open roles with target start > 30 days past
+
+headcount:
+  attrition_flag_pct: 0.02    # flag if monthly attrition exceeds 2%
