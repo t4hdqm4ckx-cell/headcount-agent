@@ -1,0 +1,348 @@
+
+<h2 class="sr-only">LuminaUS people cost forecast, November 2026 snapshot — base case vs 30-day slip scenario, December 2026 through March 2027</h2>
+
+<style>
+.kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px,1fr)); gap: 10px; margin: 1rem 0 1.5rem; }
+.kpi { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 12px 14px; }
+.kpi-label { font-size: 11px; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: .04em; margin: 0 0 4px; }
+.kpi-val { font-size: 22px; font-weight: 500; margin: 0; }
+.kpi-sub { font-size: 12px; color: var(--color-text-secondary); margin: 2px 0 0; }
+.unfav { color: #A32D2D; }
+.fav { color: #3B6D11; }
+.neutral { color: var(--color-text-primary); }
+.section-label { font-size: 11px; font-weight: 500; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: .06em; margin: 1.5rem 0 .5rem; }
+.legend { display: flex; gap: 18px; font-size: 12px; color: var(--color-text-secondary); margin-bottom: 10px; flex-wrap: wrap; }
+.legend span { display: flex; align-items: center; gap: 5px; }
+.legend-dot { width: 10px; height: 3px; border-radius: 2px; display: inline-block; }
+.pipe-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.pipe-table th { font-size: 11px; font-weight: 500; color: var(--color-text-secondary); text-align: left; padding: 4px 8px 6px; border-bottom: 0.5px solid var(--color-border-tertiary); text-transform: uppercase; letter-spacing: .04em; }
+.pipe-table td { padding: 5px 8px; border-bottom: 0.5px solid var(--color-border-tertiary); color: var(--color-text-primary); }
+.pipe-table tr:last-child td { border-bottom: none; }
+.badge { display: inline-block; font-size: 10px; padding: 2px 7px; border-radius: 4px; font-weight: 500; }
+.badge-warn { background: var(--color-background-warning); color: var(--color-text-warning); }
+.badge-ok { background: var(--color-background-success); color: var(--color-text-success); }
+.badge-info { background: var(--color-background-info); color: var(--color-text-info); }
+.dept-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(120px,1fr)); gap: 8px; margin-top: 8px; }
+.dept-cell { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 10px 12px; }
+.dept-name { font-size: 11px; color: var(--color-text-secondary); margin: 0 0 3px; }
+.dept-val { font-size: 14px; font-weight: 500; margin: 0; }
+.dept-delta { font-size: 11px; margin: 1px 0 0; }
+.tab-row { display: flex; gap: 8px; margin-bottom: 1rem; }
+.tab-btn { font-size: 12px; padding: 5px 14px; border-radius: 20px; border: 0.5px solid var(--color-border-secondary); background: transparent; color: var(--color-text-secondary); cursor: pointer; }
+.tab-btn.active { background: var(--color-text-primary); color: var(--color-background-primary); border-color: transparent; }
+.scenario-bar { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 8px; }
+.sc-card { border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 14px 16px; background: var(--color-background-primary); }
+.sc-card.active-sc { border: 1.5px solid #378ADD; }
+.sc-title { font-size: 12px; font-weight: 500; color: var(--color-text-secondary); margin: 0 0 8px; text-transform: uppercase; letter-spacing: .04em; }
+.sc-fy { font-size: 20px; font-weight: 500; margin: 0 0 2px; }
+.sc-var { font-size: 12px; margin: 0 0 6px; }
+.sc-note { font-size: 11px; color: var(--color-text-secondary); margin: 4px 0 0; line-height: 1.5; }
+.timeline { position: relative; margin: 8px 0; }
+.conv-note { font-size: 11px; color: var(--color-text-secondary); text-align: center; margin-top: 4px; }
+</style>
+
+<div style="padding: 1rem 0 .5rem;">
+
+  <p class="section-label">FY2026 full-year — scenario comparison</p>
+  <div class="scenario-bar">
+    <div class="sc-card active-sc">
+      <p class="sc-title">Base case</p>
+      <p class="sc-fy">$51,317,000</p>
+      <p class="sc-var unfav">+$317,000 vs budget (+0.6%)</p>
+      <p class="sc-note">REQ-104, REQ-301, REQ-201 all start Dec 1.<br>Remaining pipeline fills Jan–Feb 2027.</p>
+    </div>
+    <div class="sc-card">
+      <p class="sc-title">30-day slip</p>
+      <p class="sc-fy">$51,270,000</p>
+      <p class="sc-var unfav">+$270,000 vs budget (+0.5%)</p>
+      <p class="sc-note">All open roles push 30 days. Dec = Nov run rate. Converges with base in Mar 2027.</p>
+    </div>
+  </div>
+
+  <div class="kpi-grid" style="margin-top: 1.25rem;">
+    <div class="kpi">
+      <p class="kpi-label">FY2026 budget</p>
+      <p class="kpi-val neutral">$51.0M</p>
+    </div>
+    <div class="kpi">
+      <p class="kpi-label">YTD actuals Jan–Nov</p>
+      <p class="kpi-val neutral">$47.0M</p>
+    </div>
+    <div class="kpi">
+      <p class="kpi-label">Base case overrun</p>
+      <p class="kpi-val unfav">+$317K</p>
+      <p class="kpi-sub">Eng +$860K, offset by Sales & Content</p>
+    </div>
+    <div class="kpi">
+      <p class="kpi-label">Slip saves (FY2026)</p>
+      <p class="kpi-val fav">$47K</p>
+      <p class="kpi-sub">3 Dec hires push to Jan; cost, not capacity</p>
+    </div>
+    <div class="kpi">
+      <p class="kpi-label">Full pipeline run rate</p>
+      <p class="kpi-val neutral">$53.6M</p>
+      <p class="kpi-sub">Annualized once all 12 roles fill</p>
+    </div>
+    <div class="kpi">
+      <p class="kpi-label">Q1 2027 slip saves</p>
+      <p class="kpi-val fav">$145K</p>
+      <p class="kpi-sub">Favorable to cost; unfavorable to capacity</p>
+    </div>
+  </div>
+
+  <p class="section-label">Monthly run rate — Nov 2026 through Mar 2027</p>
+  <div class="legend">
+    <span><span class="legend-dot" style="background:#378ADD; height:3px;"></span>Base case</span>
+    <span><span class="legend-dot" style="background:#9FE1CB; height:3px;"></span>30-day slip</span>
+    <span><span class="legend-dot" style="background:#888780; height:1.5px; border-top: 1.5px dashed #888780;"></span>Budget baseline ($4.25M)</span>
+  </div>
+  <div style="position:relative; width:100%; height:280px;">
+    <canvas id="runRateChart" role="img" aria-label="Monthly people cost run rate from November 2026 through March 2027, comparing base case vs 30-day slip scenario against a $4.25M budget baseline. Both scenarios converge in March 2027 at $4.47M.">Base case: Nov $4.28M, Dec $4.32M, Jan $4.39M, Feb $4.47M, Mar $4.47M. Slip: Nov $4.28M, Dec $4.28M, Jan $4.32M, Feb $4.39M, Mar $4.47M.</canvas>
+  </div>
+
+  <p class="section-label" style="margin-top: 1.5rem;">Department run rate — February 2027 (fully ramped)</p>
+  <div class="dept-grid">
+    <div class="dept-cell">
+      <p class="dept-name">Engineering</p>
+      <p class="dept-val">$1,731K</p>
+      <p class="dept-delta unfav" style="font-size:11px;">+$331K vs budget</p>
+    </div>
+    <div class="dept-cell">
+      <p class="dept-name">G&A</p>
+      <p class="dept-val">$778K</p>
+      <p class="dept-delta fav" style="font-size:11px;">+$28K vs budget</p>
+    </div>
+    <div class="dept-cell">
+      <p class="dept-name">Sales</p>
+      <p class="dept-val">$819K</p>
+      <p class="dept-delta fav" style="font-size:11px;">−$31K vs budget</p>
+    </div>
+    <div class="dept-cell">
+      <p class="dept-name">Marketing</p>
+      <p class="dept-val">$635K</p>
+      <p class="dept-delta unfav" style="font-size:11px;">+$35K vs budget</p>
+    </div>
+    <div class="dept-cell">
+      <p class="dept-name">Content</p>
+      <p class="dept-val">$505K</p>
+      <p class="dept-delta fav" style="font-size:11px;">−$145K vs budget</p>
+    </div>
+  </div>
+
+  <p class="section-label" style="margin-top: 1.5rem;">Open pipeline — timing by scenario</p>
+  <table class="pipe-table">
+    <thead>
+      <tr>
+        <th>Req</th>
+        <th>Role</th>
+        <th>Dept</th>
+        <th>FL cost/mo</th>
+        <th>Base start</th>
+        <th>Slip start</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="font-family:var(--font-mono); font-size:11px;">REQ-104</td>
+        <td>Eng Manager, Security</td>
+        <td>Eng</td>
+        <td>$27,604</td>
+        <td>Dec 1</td>
+        <td style="color:#A32D2D;">Jan 1</td>
+        <td><span class="badge badge-info">Final interviews</span></td>
+      </tr>
+      <tr>
+        <td style="font-family:var(--font-mono); font-size:11px;">REQ-301</td>
+        <td>FP&A Analyst</td>
+        <td>G&A</td>
+        <td>$10,625</td>
+        <td>Dec 1</td>
+        <td style="color:#A32D2D;">Jan 1</td>
+        <td><span class="badge badge-info">Interviewing</span></td>
+      </tr>
+      <tr>
+        <td style="font-family:var(--font-mono); font-size:11px;">REQ-201</td>
+        <td>Account Executive</td>
+        <td>Sales</td>
+        <td>$8,542</td>
+        <td>Dec 1</td>
+        <td style="color:#A32D2D;">Jan 1</td>
+        <td><span class="badge badge-warn">No commission plan</span></td>
+      </tr>
+      <tr>
+        <td style="font-family:var(--font-mono); font-size:11px;">REQ-102</td>
+        <td>Sr Software Engineer</td>
+        <td>Eng</td>
+        <td>$22,917</td>
+        <td>Jan 1</td>
+        <td style="color:#A32D2D;">Feb 1</td>
+        <td><span class="badge badge-ok">Offer extended</span></td>
+      </tr>
+      <tr>
+        <td style="font-family:var(--font-mono); font-size:11px;">REQ-202</td>
+        <td>Sr Account Executive</td>
+        <td>Sales</td>
+        <td>$10,833</td>
+        <td>Jan 1</td>
+        <td style="color:#A32D2D;">Feb 1</td>
+        <td><span class="badge badge-info">Sourcing</span></td>
+      </tr>
+      <tr>
+        <td style="font-family:var(--font-mono); font-size:11px;">REQ-101</td>
+        <td>Software Engineer</td>
+        <td>Eng</td>
+        <td>$18,542</td>
+        <td>Jan 15</td>
+        <td style="color:#A32D2D;">Feb 15</td>
+        <td><span class="badge badge-warn">90d past target</span></td>
+      </tr>
+      <tr>
+        <td style="font-family:var(--font-mono); font-size:11px;">REQ-105</td>
+        <td>Sr Software Engineer</td>
+        <td>Eng</td>
+        <td>$23,125</td>
+        <td>Jan 15</td>
+        <td style="color:#A32D2D;">Feb 15</td>
+        <td><span class="badge badge-info">Sourcing</span></td>
+      </tr>
+      <tr>
+        <td style="font-family:var(--font-mono); font-size:11px;">REQ-401</td>
+        <td>Marketing Specialist</td>
+        <td>Mktg</td>
+        <td>$9,896</td>
+        <td>Jan 15</td>
+        <td style="color:#A32D2D;">Feb 15</td>
+        <td><span class="badge badge-info">Sourcing</span></td>
+      </tr>
+      <tr>
+        <td style="font-family:var(--font-mono); font-size:11px;">REQ-501</td>
+        <td>Sr Content Manager</td>
+        <td>Content</td>
+        <td>$15,625</td>
+        <td>Jan 15</td>
+        <td style="color:#A32D2D;">Feb 15</td>
+        <td><span class="badge badge-info">Sourcing</span></td>
+      </tr>
+      <tr>
+        <td style="font-family:var(--font-mono); font-size:11px;">REQ-103</td>
+        <td>Software Engineer</td>
+        <td>Eng</td>
+        <td>$18,333</td>
+        <td>Feb 1</td>
+        <td style="color:#A32D2D;">Mar 1</td>
+        <td><span class="badge badge-warn">46d past target</span></td>
+      </tr>
+      <tr>
+        <td style="font-family:var(--font-mono); font-size:11px;">REQ-302</td>
+        <td>Sr HR Manager</td>
+        <td>G&A</td>
+        <td>$16,875</td>
+        <td>Feb 1</td>
+        <td style="color:#A32D2D;">Mar 1</td>
+        <td><span class="badge badge-info">Sourcing</span></td>
+      </tr>
+      <tr>
+        <td style="font-family:var(--font-mono); font-size:11px;">REQ-502</td>
+        <td>Content Associate</td>
+        <td>Content</td>
+        <td>$9,167</td>
+        <td>Feb 1</td>
+        <td style="color:#A32D2D;">Mar 1</td>
+        <td><span class="badge badge-info">Not yet open</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="font-size:11px; color:var(--color-text-secondary); margin:.5rem 0 0;">All costs are fully loaded (base salary × 1.25 loading factor ÷ 12). Mid-month starts prorated at 0.5×. EMEA and APAC roles excluded.</p>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const months = ['Nov 26','Dec 26','Jan 27','Feb 27','Mar 27'];
+const base = [4275000, 4321771, 4389116, 4467086, 4467086];
+const slip = [4275000, 4275000, 4321771, 4389116, 4467086];
+const budget = [4250000, 4250000, 4250000, 4250000, 4250000];
+
+const fmt = v => '$' + (v/1000000).toFixed(2) + 'M';
+
+new Chart(document.getElementById('runRateChart'), {
+  type: 'line',
+  data: {
+    labels: months,
+    datasets: [
+      {
+        label: 'Base case',
+        data: base,
+        borderColor: '#378ADD',
+        backgroundColor: 'rgba(55,138,221,0.08)',
+        borderWidth: 2,
+        pointBackgroundColor: '#378ADD',
+        pointRadius: 5,
+        pointHoverRadius: 7,
+        tension: 0.3,
+        fill: false
+      },
+      {
+        label: '30-day slip',
+        data: slip,
+        borderColor: '#5DCAA5',
+        backgroundColor: 'rgba(93,202,165,0.06)',
+        borderWidth: 2,
+        pointBackgroundColor: '#5DCAA5',
+        pointRadius: 5,
+        pointHoverRadius: 7,
+        tension: 0.3,
+        fill: false,
+        borderDash: [5,3]
+      },
+      {
+        label: 'Budget baseline',
+        data: budget,
+        borderColor: '#B4B2A9',
+        borderWidth: 1.5,
+        borderDash: [6,4],
+        pointRadius: 0,
+        tension: 0,
+        fill: false
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    interaction: { mode: 'index', intersect: false },
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        callbacks: {
+          label: ctx => ' ' + ctx.dataset.label + ': ' + fmt(ctx.parsed.y),
+          afterBody: items => {
+            if (items.length >= 2) {
+              const diff = items[0].parsed.y - items[1].parsed.y;
+              if (diff > 0) return ['', ' Scenario gap: +$' + Math.round(diff).toLocaleString()];
+            }
+            return [];
+          }
+        }
+      }
+    },
+    scales: {
+      x: {
+        grid: { color: 'rgba(136,135,128,0.12)' },
+        ticks: { font: { size: 12 }, color: '#888780', autoSkip: false }
+      },
+      y: {
+        min: 4100000,
+        max: 4600000,
+        grid: { color: 'rgba(136,135,128,0.12)' },
+        ticks: {
+          font: { size: 11 },
+          color: '#888780',
+          callback: v => '$' + (v/1000000).toFixed(1) + 'M'
+        }
+      }
+    }
+  }
+});
+</script>
