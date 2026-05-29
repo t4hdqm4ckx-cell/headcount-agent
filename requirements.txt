@@ -1,0 +1,35 @@
+# Headcount & People Cost Agent System
+# Python dependencies
+#
+# Install:  pip install -r requirements.txt --break-system-packages
+# Verify:   python config.py
+
+# ── Core ─────────────────────────────────────────────────────────────────────
+
+# Excel workbook reading and writing (dataset, output reports)
+openpyxl~=3.1
+
+# YAML config loading (config/thresholds.yaml)
+PyYAML~=6.0
+
+# Data manipulation and analysis (agent scripts, dataset builder)
+pandas~=2.2
+
+# ── Optional — analysis and reporting ────────────────────────────────────────
+
+# Pretty-print tables in terminal output
+# tabulate~=0.9
+
+# Progress bars for long dataset operations
+# tqdm~=4.66
+
+# ── Development ───────────────────────────────────────────────────────────────
+
+# Test runner
+# pytest~=8.2
+
+# Code formatter
+# black~=24.4
+
+# Linter
+# flake8~=7.0
